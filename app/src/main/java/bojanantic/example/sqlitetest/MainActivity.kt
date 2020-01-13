@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         val query = database.rawQuery("SELECT * FROM contacts", null)
         query.use {
             while (it.moveToNext()) {
-                with(query){
+                with(it){
                     val id = getLong(0)
                     val name = getString(1)
                     val phone = getInt(2)
